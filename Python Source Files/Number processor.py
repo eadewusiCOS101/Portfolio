@@ -10,25 +10,25 @@ while True:
 -divide
 -exponential
 (To exit, type'Quit')
->''')
-    if process.lower() == 'quit':
+>''').lower()
+    if process == 'quit':
         break
-    elif process.lower() == 'add':
+    elif process == 'add':
         print(num1 + num2)
-    elif process.lower() == 'subtract':
+    elif process == 'subtract':
         print(num1-num2)
-    elif process.lower() == 'multiply':
+    elif process == 'multiply':
         print(num1 * num2)
-    elif process.lower() == 'divide':
+    elif process == 'divide':
         print(num1/num2)
-    elif process.lower() == 'exponential':
+    elif process == 'exponential':
         print(num1, 'to power', num2, 'is', num1**num2,)
-    elif process.lower() == 'square root':
+    elif process == 'square root':
         print('square root of', num1, ':', num1**(1/2))
         print('square root of', num2, ':', num2**(1/2))
-    elif process.lower() == 'nth root':
+    elif process == 'nth root':
         print(num1, 'to root', num2, 'is', num1**(1/num2))
-    elif process.lower() == 'logarithm' or 'log':
+    elif process == 'logarithm' or 'log':
         print('log', num1, 'to base', num2, 'is', math.log(num1, num2))
     else:
         print('Please select a stated process.')
