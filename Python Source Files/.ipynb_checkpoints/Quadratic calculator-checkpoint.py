@@ -1,9 +1,7 @@
 import math
 
-
 def discriminant(x, y, z):
     return y**2 - 4*x*z
-
 
 def get_inputs(prompt):
     while True:
@@ -22,7 +20,7 @@ if a == 0:
     exit()
 
 b = get_inputs("Enter b:")
-c = get_inputs("Enter c:")
+c = get_inputs("Enter c:"))
 d = discriminant(a, b, c)
 if d >= 0:
     root1 = ((-b) + math.sqrt(d)) / (2 * a)

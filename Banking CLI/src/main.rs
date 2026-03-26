@@ -11,8 +11,8 @@ impl Bank_Account{
         println!("Withdrawing ₦{} from the account", amount);
         self.balance -= amount;
     }
-    fn debit(&mut self, amount:f64){
-        println!("Debiting ₦{} to the account", amount);
+    fn credit(&mut self, amount:f64){
+        println!("Crediting ₦{} to the account", amount);
         self.balance += amount;
     }
 }
@@ -99,7 +99,7 @@ fn main(){
 
         loop{
             let mut operation = loop{
-                let mut operation_input = get_info("\nWhat would you like to do? \n1) Withdraw.\n2) Debit.\n3) Check balance.");
+                let mut operation_input = get_info("\nWhat would you like to do? \n1) Withdraw.\n2) Credit.\n3) Check balance.");
                 if operation_input != "1" && operation_input != "2" && operation_input != "3"{
                     println!("Invalid, Select the number code of the operation,1,2,3. For the respective operations.");
                 }
@@ -123,12 +123,12 @@ fn main(){
             }
             else if operation == "2"{
                 loop{
-                    amount = get_float_input("How much do you want to debit?");
+                    amount = get_float_input("How much do you want to credit?");
                     if amount > 3000000.0 || amount < 500.0{
                         println!("Invalid, Debit floor is ₦500, Debit celing is ₦3,000,000\n");
                     }
                     else{
-                        account.debit(amount);
+                        account.credit(amount);
                         println!("Debit successful, ₦{:.2} has now been added to your account, balance is {:.2}.\n", amount, account.balance);
                         break;
                     }
